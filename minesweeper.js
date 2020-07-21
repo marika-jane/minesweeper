@@ -1,51 +1,63 @@
 document.addEventListener('DOMContentLoaded', startGame)
 
 // Define your `board` object here!
+// var board = {};
+
+// function genBoard () {
+//   board.cells = [];
+//   for (var i = 0; i < 4; i++) {
+//     board.cells.push({row: 0, col: i, isMine: (Math.random() >= 0.5), hidden: true});
+//     board.cells.push({row: 1, col: i, isMine: (Math.random() >= 0.5), hidden: true});
+//     board.cells.push({row: 2, col: i, isMine: (Math.random() >= 0.5), hidden: true});
+//     board.cells.push({row: 3, col: i, isMine: (Math.random() >= 0.5), hidden: true});
+//   }
+// }
+
 var board = {
   cells: [{
     row: 0,
     col: 0,
-    isMine: false,
+    isMine: (Math.random() >= 0.5),
     hidden: true
   }, {
     row: 0,
     col: 1,
-    isMine: true,
+    isMine: (Math.random() >= 0.5),
     hidden: true
   }, {
     row: 0,
     col: 2,
-    isMine: true,
+    isMine: (Math.random() >= 0.5),
     hidden: true
   }, {
     row: 1,
     col: 0,
-    isMine: true,
+    isMine: (Math.random() >= 0.5),
     hidden: true
   }, {
     row: 1,
     col: 1,
-    isMine: false,
+    isMine: (Math.random() >= 0.5),
     hidden: true
   }, {
     row: 1,
     col: 2,
-    isMine: false,
+    isMine: (Math.random() >= 0.5),
     hidden: true
   }, {
     row: 2,
     col: 0,
-    isMine: true,
+    isMine: (Math.random() >= 0.5),
     hidden: true
   }, {
     row: 2,
     col: 1,
-    isMine: true,
+    isMine: (Math.random() >= 0.5),
     hidden: true
   }, {
     row: 2,
     col: 2,
-    isMine: true,
+    isMine: (Math.random() >= 0.5),
     hidden: true
   }]
 };
