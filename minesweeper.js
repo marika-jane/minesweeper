@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', startGame)
 
 // Define your `board` object here!
-// var board = {};
+var board = {};
 
 // function genBoard () {
 //   board.cells = [];
@@ -13,62 +13,24 @@ document.addEventListener('DOMContentLoaded', startGame)
 //   }
 // }
 
-var board = {
-  cells: [{
-    row: 0,
-    col: 0,
-    isMine: (Math.random() >= 0.5),
-    hidden: true
-  }, {
-    row: 0,
-    col: 1,
-    isMine: (Math.random() >= 0.5),
-    hidden: true
-  }, {
-    row: 0,
-    col: 2,
-    isMine: (Math.random() >= 0.5),
-    hidden: true
-  }, {
-    row: 1,
-    col: 0,
-    isMine: (Math.random() >= 0.5),
-    hidden: true
-  }, {
-    row: 1,
-    col: 1,
-    isMine: (Math.random() >= 0.5),
-    hidden: true
-  }, {
-    row: 1,
-    col: 2,
-    isMine: (Math.random() >= 0.5),
-    hidden: true
-  }, {
-    row: 2,
-    col: 0,
-    isMine: (Math.random() >= 0.5),
-    hidden: true
-  }, {
-    row: 2,
-    col: 1,
-    isMine: (Math.random() >= 0.5),
-    hidden: true
-  }, {
-    row: 2,
-    col: 2,
-    isMine: (Math.random() >= 0.5),
-    hidden: true
-  }]
-};
+//better generate board function with 2 for loops
+function genBoard () {
+  board.cells = [];
+  for (var i = 0; i < 5; i++) {
+    for (var j = 0; j < 5; j++) {
+      board.cells.push({row: j, col: i, isMine: (Math.random() >= 0.7), hidden: true})
+    }
+  }
+}
 
 function startGame () {
-   for (var i = 0; i < board.cells.length; i++) {
+  genBoard();
+  for (var i = 0; i < board.cells.length; i++) {
      var cell = board.cells[i];
      var count = countSurroundingMines(cell);
      cell.surroundingMines = count;
   }
-  // Don't remove this function call: it makes the game work!
+    // Don't remove this function call: it makes the game work!
   lib.initBoard()
 }
 
@@ -113,3 +75,59 @@ function countSurroundingMines (cell) {
   return count;
 }
 
+var refresh = document.getElementById("reload").onclick = reloadPage;
+
+function reloadPage() {
+  window.location.reload();
+}
+
+
+//original board code
+// var board = {
+//   cells: [{
+//     row: 0,
+//     col: 0,
+//     isMine: (Math.random() >= 0.5),
+//     hidden: true
+//   }, {
+//     row: 0,
+//     col: 1,
+//     isMine: (Math.random() >= 0.5),
+//     hidden: true
+//   }, {
+//     row: 0,
+//     col: 2,
+//     isMine: (Math.random() >= 0.5),
+//     hidden: true
+//   }, {
+//     row: 1,
+//     col: 0,
+//     isMine: (Math.random() >= 0.5),
+//     hidden: true
+//   }, {
+//     row: 1,
+//     col: 1,
+//     isMine: (Math.random() >= 0.5),
+//     hidden: true
+//   }, {
+//     row: 1,
+//     col: 2,
+//     isMine: (Math.random() >= 0.5),
+//     hidden: true
+//   }, {
+//     row: 2,
+//     col: 0,
+//     isMine: (Math.random() >= 0.5),
+//     hidden: true
+//   }, {
+//     row: 2,
+//     col: 1,
+//     isMine: (Math.random() >= 0.5),
+//     hidden: true
+//   }, {
+//     row: 2,
+//     col: 2,
+//     isMine: (Math.random() >= 0.5),
+//     hidden: true
+//   }]
+// };
