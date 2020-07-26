@@ -8,6 +8,7 @@ body {
   align-items: center;
   justify-content: flex-center;
   flex-direction: column;
+  background-color: rgb(202, 136, 180);
 }
 
 #message, #notes {
